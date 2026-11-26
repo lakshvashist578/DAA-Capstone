@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <title>Capstone Report | Mini-Courier Planner | Laksh Vashist (2501730202)</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap');
-
     :root {
       --primary: #1e3a8a;
       --secondary: #0284c7;
@@ -17,9 +15,9 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.6;
       background: #f1f5f9;
       padding: 2rem 1rem;
     }
@@ -28,32 +26,33 @@
       max-width: 900px;
       margin: 0 auto;
       background: #ffffff;
-      padding: 4rem 4.5rem;
+      padding: 3.5rem 4rem;
       border-radius: 8px;
       box-shadow: 0 4px 25px rgba(0,0,0,0.08);
     }
 
-    /* Print styling */
     @media print {
       body { background: #fff; padding: 0; }
-      .document-container { box-shadow: none; padding: 1.5cm 2cm; max-width: 100%; }
+      .document-container { box-shadow: none; padding: 1cm 1.5cm; max-width: 100%; }
       .page-break { page-break-before: always; }
       .no-print { display: none !important; }
+      .figure-container { break-inside: avoid; }
+      .callout { break-inside: avoid; }
+      table { break-inside: avoid; }
     }
 
-    /* Cover Page */
     .cover-page {
       text-align: center;
-      min-height: 85vh;
+      min-height: 88vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       border: 3px double #1e3a8a;
       padding: 3rem 2rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
     .univ-title {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       font-weight: 700;
       color: var(--primary);
       text-transform: uppercase;
@@ -62,10 +61,10 @@
     .univ-subtitle {
       font-size: 1rem;
       color: var(--text-light);
-      margin-top: 0.25rem;
+      margin-top: 0.35rem;
     }
     .report-badge {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--secondary);
       letter-spacing: 0.1em;
@@ -73,12 +72,12 @@
       margin-top: 2rem;
     }
     .project-title {
-      font-size: 2.2rem;
+      font-size: 2.15rem;
       font-weight: 800;
       color: #0f172a;
-      margin: 1.5rem 0 0.5rem 0;
+      margin: 1.25rem 0 0.5rem 0;
       line-height: 1.25;
-      font-family: 'Merriweather', serif;
+      font-family: Georgia, serif;
     }
     .project-subject {
       font-size: 1.15rem;
@@ -106,29 +105,29 @@
       margin-bottom: 0.25rem;
     }
 
-    /* Headings */
     h1, h2, h3, h4 {
-      font-family: 'Merriweather', serif;
+      font-family: Georgia, serif;
       color: #0f172a;
-      margin-top: 2rem;
-      margin-bottom: 0.85rem;
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
     }
-    h1 { font-size: 1.75rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.4rem; }
-    h2 { font-size: 1.35rem; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
-    h3 { font-size: 1.1rem; color: #1e293b; }
+    h1 { font-size: 1.65rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.35rem; }
+    h2 { font-size: 1.3rem; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+    h3 { font-size: 1.08rem; color: #1e293b; }
 
-    p { margin-bottom: 1rem; text-align: justify; }
+    p { margin-bottom: 0.9rem; text-align: justify; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.35rem; }
 
-    /* Tables */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1.25rem 0;
-      font-size: 0.9rem;
+      margin: 1rem 0;
+      font-size: 0.88rem;
     }
     th, td {
       border: 1px solid var(--border);
-      padding: 0.6rem 0.85rem;
+      padding: 0.5rem 0.75rem;
       text-align: left;
     }
     th {
@@ -138,47 +137,55 @@
     }
     tr:nth-child(even) td { background: #fdfdfd; }
 
-    /* Code Blocks */
     pre, code {
-      font-family: 'JetBrains Mono', Consolas, monospace;
-      font-size: 0.85rem;
+      font-family: Consolas, 'Courier New', monospace;
+      font-size: 0.83rem;
     }
     pre {
       background: #0f172a;
       color: #f8fafc;
-      padding: 1rem 1.25rem;
+      padding: 0.85rem 1.1rem;
       border-radius: 6px;
       overflow-x: auto;
-      margin: 1rem 0;
+      margin: 0.85rem 0;
       line-height: 1.45;
     }
-    p code {
+    p code, li code {
       background: #f1f5f9;
       color: #0284c7;
-      padding: 0.15rem 0.35rem;
+      padding: 0.1rem 0.3rem;
       border-radius: 4px;
     }
 
-    /* Figures & Images */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin: 1.25rem 0;
+    }
     .figure-container {
-      margin: 1.5rem 0;
+      margin: 0.5rem 0;
       text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.65rem;
+      background: #fff;
+    }
+    .figure-container.full-width {
+      grid-column: 1 / -1;
     }
     .figure-container img {
       max-width: 100%;
       height: auto;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-radius: 4px;
     }
     .figure-caption {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-light);
-      margin-top: 0.5rem;
+      margin-top: 0.4rem;
       font-style: italic;
     }
 
-    /* Print Button Bar */
     .action-bar {
       position: sticky;
       top: 1rem;
@@ -207,10 +214,10 @@
     .callout {
       background: #f0f9ff;
       border-left: 4px solid var(--secondary);
-      padding: 1rem 1.25rem;
-      margin: 1.25rem 0;
+      padding: 0.85rem 1.1rem;
+      margin: 1rem 0;
       border-radius: 0 6px 6px 0;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -218,7 +225,7 @@
 
   <div class="action-bar no-print">
     <span><strong>Academic Report Viewer</strong> &bull; K.R. Mangalam University</span>
-    <button class="btn-print" onclick="window.print()">🖨 Print / Save as PDF</button>
+    <button class="btn-print" onclick="window.print()">Print / Save as PDF</button>
   </div>
 
   <div class="document-container">
@@ -227,12 +234,12 @@
     <div class="cover-page">
       <div>
         <div class="univ-title">K.R. Mangalam University</div>
-        <div class="univ-subtitle">School of Engineering and Technology &bull; Department of Computer Science & Engineering</div>
+        <div class="univ-subtitle">School of Engineering and Technology &bull; Department of Computer Science &amp; Engineering</div>
         <div class="report-badge">Capstone Project Report &bull; ETCCDA302</div>
       </div>
 
       <div>
-        <div class="project-title">Mini-Courier Dispatch Planner & Route Optimization Engine</div>
+        <div class="project-title">Mini-Courier Dispatch Planner &amp; Route Optimization Engine</div>
         <div class="project-subject">Design and Analysis of Algorithms (ETCCDA302)</div>
       </div>
 
@@ -241,32 +248,31 @@
           <h4>Submitted By:</h4>
           <p><strong>Name:</strong> Laksh Vashist</p>
           <p><strong>Roll No:</strong> 2501730202</p>
-          <p><strong>Course:</strong> B.Tech Computer Science & Engineering</p>
-          <p><strong>Semester:</strong> 5th Semester &bull; Batch 2024-2028</p>
+          <p><strong>Course:</strong> B.Tech Computer Science &amp; Engineering</p>
+          <p><strong>Institution:</strong> K.R. Mangalam University, Gurugram</p>
         </div>
         <div class="meta-col">
           <h4>Under the Guidance of:</h4>
           <p><strong>Faculty Mentor:</strong> Ms. Ankita Singh</p>
           <p>Assistant Professor</p>
           <p>Department of CSE, SOET</p>
-          <p>K.R. Mangalam University</p>
+          <p>K.R. Mangalam University, Gurugram</p>
         </div>
       </div>
     </div>
 
-    <!-- Certificate / Declaration -->
+    <!-- Certificate / Declaration & Acknowledgement -->
     <div class="page-break"></div>
-    <h2>Declaration & Certificate of Authenticity</h2>
+    <h2>Declaration &amp; Certificate of Originality</h2>
     <p>
-      I, <strong>Laksh Vashist</strong> (Roll No: <strong>2501730202</strong>), bonafide student of Bachelor of Technology in Computer Science & Engineering at <strong>K.R. Mangalam University, Gurugram</strong>, hereby declare that the capstone project report entitled <strong>"Mini-Courier Dispatch Planner & Route Optimization Engine"</strong> submitted to the Department of Computer Science & Engineering is an authentic record of my original work carried out under the guidance of <strong>Ms. Ankita Singh</strong>.
+      I, <strong>Laksh Vashist</strong> (Roll No: <strong>2501730202</strong>), student of Bachelor of Technology in Computer Science &amp; Engineering at <strong>K.R. Mangalam University, Gurugram</strong>, hereby declare that the capstone project report entitled <strong>"Mini-Courier Dispatch Planner &amp; Route Optimization Engine"</strong> submitted to the Department of Computer Science &amp; Engineering for the subject <strong>Design and Analysis of Algorithms (ETCCDA302)</strong> is an authentic record of my original work carried out under the supervision of <strong>Ms. Ankita Singh</strong>.
     </p>
     <p>
       This manuscript has not been submitted previously in part or full for the award of any other degree or diploma to any university or examining body.
     </p>
-    <br><br>
-    <div style="display:flex; justify-content:space-between; margin-top:2rem;">
+    <div style="display:flex; justify-content:space-between; margin-top:1.75rem;">
       <div>
-        <p><strong>Date:</strong> 26th November 2026</p>
+        <p><strong>Date:</strong> November 2026</p>
         <p><strong>Place:</strong> Gurugram, Haryana</p>
       </div>
       <div style="text-align:right;">
@@ -276,57 +282,78 @@
       </div>
     </div>
 
-    <hr style="margin: 2.5rem 0; border: none; border-top: 1px solid var(--border);">
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
 
     <h2>Acknowledgement</h2>
     <p>
-      I wish to express my deepest gratitude to my esteemed mentor, <strong>Ms. Ankita Singh</strong>, Assistant Professor, Department of Computer Science & Engineering, <strong>K.R. Mangalam University</strong>, for her continuous encouragement, expert guidance, and critical evaluation throughout the tenure of this capstone assignment. Her advice in formulating the 0/1 Knapsack dynamic programming recurrences and analyzing metric TSP heuristic approximation bounds has been indispensable.
+      I wish to express my deepest gratitude to my esteemed mentor, <strong>Ms. Ankita Singh</strong>, Assistant Professor, Department of Computer Science &amp; Engineering, <strong>K.R. Mangalam University</strong>, for her continuous encouragement, expert guidance, and critical evaluation throughout this capstone assignment. Her advice in formulating the 0/1 Knapsack dynamic programming recurrences and analyzing metric TSP heuristic approximation bounds has been indispensable.
     </p>
     <p>
-      I also extend my sincere appreciation to the <strong>School of Engineering & Technology</strong> and the computing laboratory staff of K.R. Mangalam University for facilitating the technical infrastructure and software libraries required for empirical profiling.
+      I also extend my sincere appreciation to the <strong>School of Engineering &amp; Technology</strong> and the computing laboratory staff of K.R. Mangalam University for facilitating the technical infrastructure required for empirical profiling.
     </p>
 
-    <!-- Abstract -->
+    <!-- Abstract & Problem Design -->
     <div class="page-break"></div>
-    <h1>Abstract</h1>
+    <h1>1. Abstract &amp; Problem Formulation</h1>
     <p>
-      Urban logistical dispatch planning represents a multi-constrained optimization problem involving priority scheduling, constrained cargo loading, and metric route synthesis across non-complete road networks. 
-      This project develops a complete four-stage algorithmic engine that synthesizes <strong>Stable Merge Sort</strong> ($\mathcal{O}(n \log n)$), <strong>0/1 Knapsack Dynamic Programming</strong> ($\mathcal{O}(n \cdot W)$), <strong>Dijkstra’s Single-Source Shortest Paths</strong> ($\mathcal{O}((V+E) \log V)$), and <strong>Nearest Neighbor TSP Tour Approximation</strong> ($\mathcal{O}(n^2)$).
+      Urban logistical dispatch planning represents a multi-constrained optimization problem involving priority scheduling, constrained cargo loading, and metric route synthesis across non-complete road networks.
+      This project develops a complete four-stage algorithmic engine that synthesizes <strong>Stable Merge Sort</strong> (<i>O</i>(<i>n</i> log <i>n</i>)), <strong>0/1 Knapsack Dynamic Programming</strong> (<i>O</i>(<i>n</i> &middot; <i>W</i>)), <strong>Dijkstra's Single-Source Shortest Paths</strong> (<i>O</i>((<i>V</i> + <i>E</i>) log <i>V</i>)), and <strong>Nearest Neighbor TSP Tour Approximation</strong> (<i>O</i>(<i>n</i><sup>2</sup>)).
     </p>
     <p>
-      The system features both an enhanced Unicode/ANSI terminal interface and an interactive HTML5 Canvas web dashboard with real-time payload sliders, Dijkstra path traces, animated delivery van simulations, and DP matrix heatmaps. Empirical performance evaluations confirm asymptotic theoretical models and quantify the greedy heuristic approximation ratio against an exact factorial brute-force baseline.
-    </p>
-
-    <!-- Algorithmic Structure -->
-    <h1>System Pipeline & Algorithm Formulations</h1>
-
-    <h3>1. Urgency Sorting (Stable Merge Sort)</h3>
-    <p>
-      Incoming parcels are ordered by the composite key <code>(priority, deadline_hours)</code>. Merge Sort recursively partitions the manifest and merges sorted partitions by always advancing the lesser front element, using <code>&lt;=</code> comparison to preserve stability ($\mathcal{O}(n \log n)$ time, $\mathcal{O}(n)$ space).
+      The system features both an enhanced Unicode/ANSI terminal interface (<code>main.py</code>) and an interactive HTML5 Canvas web dashboard (<code>web/index.html</code> &amp; <code>server.py</code>) with real-time payload sliders, Dijkstra path traces, animated delivery van simulations, and DP matrix heatmaps.
     </p>
 
-    <h3>2. Optimal Vehicle Loading (0/1 Knapsack DP)</h3>
+    <h2>2. System Architecture &amp; Data Representation</h2>
     <p>
-      Given vehicle capacity $W = 25\text{ kg}$, parcels cannot be subdivided. The optimal value is computed via the recurrence:
-    </p>
-    <pre>table[i][w] = max(table[i-1][w], table[i-1][w - weight_i] + value_i)   (if weight_i &lt;= w)</pre>
-    <p>
-      Backtracking from <code>table[n][W]</code> retrieves the exact subset of parcels loaded.
+      The NCR/Gurugram road map (<code>data/locations.json</code>) models 10 locations and 15 bidirectional roads as a sparse adjacency list <i>G</i> = (<i>V</i>, <i>E</i>). Each parcel (<code>data/parcels.json</code>) stores <code>id</code>, <code>name</code>, <code>weight</code> (kg), <code>value</code> (Rs), <code>priority</code> (1=Urgent to 3=Low), <code>deadline_hours</code>, and <code>location</code>.
     </p>
 
-    <h3>3. Shortest Road Paths (Dijkstra's Algorithm)</h3>
+    <pre>parcels.json ──► Merge Sort (priority, deadline) ──► 0/1 Knapsack DP (W = 25 kg) ──► Selected Stops
+                                                                                            │
+locations.json ─► Adjacency List ─► Dijkstra (Warehouse + Every Stop) ──► Metric Distance Matrix
+                                                                                            │
+                                                        Nearest Neighbor TSP ◄──────────────┘
+                                                               │
+                                                Turn-by-Turn Road Route (47 km)</pre>
+
+    <h2>3. Algorithmic Formulations</h2>
+
+    <h3>3.1 Urgency Sorting (Stable Merge Sort)</h3>
     <p>
-      The Gurgaon/NCR road network is stored as an adjacency list with $10$ locations and $15$ physical bidirectional roads. A min-heap priority queue extracts minimum tentative distances and relaxes edges in $\mathcal{O}((V + E) \log V)$ time, creating a complete metric distance matrix across all delivery stops.
+      Incoming parcels are ordered by composite key <code>(priority, deadline_hours)</code>. Merge Sort recursively partitions the manifest and merges sorted halves using <code>&lt;=</code> comparison to preserve stability in guaranteed <i>O</i>(<i>n</i> log <i>n</i>) time and <i>O</i>(<i>n</i>) auxiliary space.
     </p>
 
-    <h3>4. Tour Synthesis (Nearest Neighbor vs Brute Force)</h3>
+    <h3>3.2 Optimal Vehicle Loading (0/1 Knapsack DP)</h3>
     <p>
-      From the central Warehouse, the Nearest Neighbor algorithm iteratively hops to the nearest unvisited customer destination before closing the circuit back to the warehouse ($\mathcal{O}(k^2)$). For small stop sets ($k \le 8$), an exact brute-force search over all $k!$ permutations is executed to evaluate the heuristic's approximation gap.
+      Given vehicle capacity <i>W</i> = 25 kg, discrete parcels cannot be split. The optimal value is computed via the recurrence:
+    </p>
+    <pre>table[i][w] = max(table[i-1][w], table[i-1][w - weight_i] + value_i)   [if weight_i &lt;= w]</pre>
+    <p>
+      Backtracking from <code>table[n][W]</code> retrieves the exact subset of 8 loaded parcels (<code>P05, P02, P01, P09, P08, P12, P07, P06</code>) totaling <strong>25 / 25 kg</strong> and <strong>Rs 4,100</strong>.
     </p>
 
-    <!-- Empirical Results -->
+    <h3>3.3 Shortest Road Paths (Dijkstra's Algorithm)</h3>
+    <p>
+      A binary min-heap (<code>heapq</code>) extracts minimum tentative distances and relaxes edges in <i>O</i>((<i>V</i> + <i>E</i>) log <i>V</i>) time, creating a complete metric distance matrix across the Warehouse and 7 active delivery stops.
+    </p>
+
+    <h3>3.4 Tour Synthesis (Nearest Neighbor vs. Brute Force)</h3>
+    <p>
+      From the Warehouse, Nearest Neighbor greedily hops to the closest unvisited stop in <i>O</i>(<i>k</i><sup>2</sup>) time, yielding a <strong>47 km</strong> tour. Exact brute-force evaluation over all 7! = 5,040 permutations yields <strong>37 km</strong>, demonstrating a +10 km (27%) greedy approximation gap.
+    </p>
+
+    <!-- Empirical Results & Correctness -->
     <div class="page-break"></div>
-    <h1>Empirical Runtime Benchmarks</h1>
+    <h1>4. Correctness Verification &amp; Empirical Benchmarks</h1>
+    <p>
+      All automated tests in <code>performance/benchmark.py</code> (seed <code>Random(42)</code>, timed with <code>time.perf_counter()</code>) passed:
+    </p>
+    <ul>
+      <li><strong>Merge Sort</strong> matches Python's built-in <code>sorted()</code> on 200 parcels: <strong>PASS</strong></li>
+      <li><strong>Knapsack DP</strong> matches exact brute force on 12 parcels (capacity 30 kg): <strong>PASS (1419 vs 1419)</strong></li>
+      <li><strong>Dijkstra</strong> matches hand-solved 4-node graph: <strong>PASS ({'A': 0, 'B': 3, 'C': 1, 'D': 8})</strong></li>
+      <li><strong>Nearest Neighbor</strong> visits all stops once and is &ge; exact optimum: <strong>PASS (253.3 vs 253.3)</strong></li>
+    </ul>
 
     <table>
       <thead>
@@ -341,74 +368,119 @@
       <tbody>
         <tr>
           <td><strong>Merge Sort</strong></td>
-          <td>0.114 ms ($n=100$)</td>
-          <td>1.600 ms ($n=1,000$)</td>
-          <td>5.634 ms ($n=3,000$)</td>
-          <td>$\mathcal{O}(n \log n)$</td>
+          <td>0.114 ms (<i>n</i>=100)</td>
+          <td>1.600 ms (<i>n</i>=1,000)</td>
+          <td>5.634 ms (<i>n</i>=3,000)</td>
+          <td><i>O</i>(<i>n</i> log <i>n</i>)</td>
         </tr>
         <tr>
           <td><strong>Bubble Sort</strong></td>
-          <td>0.567 ms ($n=100$)</td>
-          <td>63.298 ms ($n=1,000$)</td>
-          <td>618.291 ms ($n=3,000$)</td>
-          <td>$\mathcal{O}(n^2)$</td>
+          <td>0.567 ms (<i>n</i>=100)</td>
+          <td>63.298 ms (<i>n</i>=1,000)</td>
+          <td>618.291 ms (<i>n</i>=3,000)</td>
+          <td><i>O</i>(<i>n</i><sup>2</sup>)</td>
         </tr>
         <tr>
           <td><strong>Knapsack DP</strong></td>
-          <td>0.049 ms ($n=10, W=50$)</td>
-          <td>4.533 ms ($n=100, W=500$)</td>
-          <td>84.400 ms ($n=400, W=2,000$)</td>
-          <td>$\mathcal{O}(n \cdot W)$</td>
+          <td>0.049 ms (<i>n</i>=10, <i>W</i>=50)</td>
+          <td>4.533 ms (<i>n</i>=100, <i>W</i>=500)</td>
+          <td>84.400 ms (<i>n</i>=400, <i>W</i>=2,000)</td>
+          <td><i>O</i>(<i>n</i> &middot; <i>W</i>)</td>
         </tr>
         <tr>
           <td><strong>Dijkstra</strong></td>
-          <td>0.023 ms ($V=10$)</td>
-          <td>0.674 ms ($V=500$)</td>
-          <td>18.367 ms ($V=5,000$)</td>
-          <td>$\mathcal{O}((V+E) \log V)$</td>
+          <td>0.023 ms (<i>V</i>=10)</td>
+          <td>0.674 ms (<i>V</i>=500)</td>
+          <td>18.367 ms (<i>V</i>=5,000)</td>
+          <td><i>O</i>((<i>V</i>+<i>E</i>) log <i>V</i>)</td>
         </tr>
         <tr>
           <td><strong>Nearest Neighbor</strong></td>
-          <td>0.010 ms ($k=10$)</td>
-          <td>1.519 ms ($k=200$)</td>
-          <td>42.838 ms ($k=1,000$)</td>
-          <td>$\mathcal{O}(k^2)$</td>
+          <td>0.010 ms (<i>k</i>=10)</td>
+          <td>1.519 ms (<i>k</i>=200)</td>
+          <td>42.838 ms (<i>k</i>=1,000)</td>
+          <td><i>O</i>(<i>k</i><sup>2</sup>)</td>
         </tr>
       </tbody>
     </table>
 
-    <div class="figure-container">
-      <img src="charts/sorting.png" alt="Sorting Benchmark">
-      <div class="figure-caption">Figure 1: Empirical scaling comparison between Merge Sort $\mathcal{O}(n \log n)$ and Bubble Sort $\mathcal{O}(n^2)$.</div>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Stops (<i>k</i>)</th>
+          <th>NN Time (ms)</th>
+          <th>Brute Force Time (ms)</th>
+          <th>NN Longer By (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>5</td><td>0.004 ms</td><td>0.035 ms</td><td>19.4%</td></tr>
+        <tr><td>6</td><td>0.004 ms</td><td>0.110 ms</td><td>0.0%</td></tr>
+        <tr><td>7</td><td>0.005 ms</td><td>0.700 ms</td><td>0.0%</td></tr>
+        <tr><td>8</td><td>0.005 ms</td><td>4.934 ms</td><td>0.0%</td></tr>
+        <tr><td>9</td><td>0.007 ms</td><td>43.901 ms</td><td>0.0%</td></tr>
+      </tbody>
+    </table>
 
-    <div class="figure-container">
-      <img src="charts/tsp_exact_vs_nn.png" alt="TSP Benchmark">
-      <div class="figure-caption">Figure 2: Runtime scaling demonstrating factorial explosion of Brute Force $\mathcal{O}(n!)$ versus Nearest Neighbor $\mathcal{O}(n^2)$.</div>
-    </div>
-
-    <!-- Viva Voce -->
+    <!-- All 6 Charts -->
     <div class="page-break"></div>
-    <h1>Viva Voce Quick Reference Guide</h1>
+    <h1>5. Performance Visualizations (All Benchmark Charts)</h1>
+    <div class="charts-grid">
+      <div class="figure-container">
+        <img src="charts/sorting.png" alt="Sorting Benchmark">
+        <div class="figure-caption">Figure 1: Merge Sort <i>O</i>(<i>n</i> log <i>n</i>) vs Bubble Sort <i>O</i>(<i>n</i><sup>2</sup>).</div>
+      </div>
+      <div class="figure-container">
+        <img src="charts/knapsack.png" alt="Knapsack DP Benchmark">
+        <div class="figure-caption">Figure 2: 0/1 Knapsack DP scaling with <i>n</i> &times; <i>W</i>.</div>
+      </div>
+      <div class="figure-container">
+        <img src="charts/dijkstra.png" alt="Dijkstra Benchmark">
+        <div class="figure-caption">Figure 3: Dijkstra shortest-path scaling up to 5,000 nodes.</div>
+      </div>
+      <div class="figure-container">
+        <img src="charts/tsp.png" alt="Nearest Neighbor TSP Benchmark">
+        <div class="figure-caption">Figure 4: Nearest Neighbor TSP <i>O</i>(<i>n</i><sup>2</sup>) scaling up to 1,000 stops.</div>
+      </div>
+      <div class="figure-container">
+        <img src="charts/tsp_exact_vs_nn.png" alt="NN vs Brute Force">
+        <div class="figure-caption">Figure 5: Exact Brute Force <i>O</i>(<i>n</i>!) explosion vs Nearest Neighbor.</div>
+      </div>
+      <div class="figure-container">
+        <img src="charts/all_algorithms.png" alt="All Algorithms Combined">
+        <div class="figure-caption">Figure 6: Combined empirical scaling across all implemented algorithms.</div>
+      </div>
+    </div>
+
+    <!-- Viva Voce & Conclusion -->
+    <div class="page-break"></div>
+    <h1>6. Limitations, Future Work &amp; Viva Voce Guide</h1>
+    <p>
+      <strong>Limitations &amp; Future Enhancements:</strong> Nearest Neighbor optimizes purely for distance without time-window penalties (e.g., urgent parcel <code>P05</code> is delivered 5th). Future extensions include 2-opt local search post-processing, time-window constraints (VRPTW), multi-trip knapsack batching, and 1D rolling-array DP space optimization (<i>O</i>(<i>W</i>)).
+    </p>
 
     <div class="callout">
       <strong>Q: Why is 0/1 Knapsack pseudo-polynomial?</strong><br>
-      <em>A:</em> The running time is $\mathcal{O}(n \cdot W)$. While linear with the integer magnitude of $W$, in computational complexity theory the input length is $\log_2 W$ bits, making it exponential in the input bit length ($\mathcal{O}(n \cdot 2^b)$).
+      <em>A:</em> The running time is <i>O</i>(<i>n</i> &middot; <i>W</i>). While linear in the numeric value of <i>W</i>, input size in bits is <i>b</i> = log<sub>2</sub> <i>W</i>, making it exponential in bit length: <i>O</i>(<i>n</i> &middot; 2<sup><i>b</i></sup>).
     </div>
 
     <div class="callout">
       <strong>Q: Why did Nearest Neighbor output 47 km when the optimal route is 37 km?</strong><br>
-      <em>A:</em> Nearest Neighbor makes greedy local choices without lookahead. Visiting Golf Course Road from Sector 14 left no nearby vertices, forcing an expensive $16\text{ km}$ return leg across the map. The global brute-force search avoided this suboptimal trap.
+      <em>A:</em> Nearest Neighbor makes greedy local choices without lookahead. Visiting Golf Course Road from Sector 14 left an expensive 16 km return leg back to the Warehouse, whereas Brute Force evaluates all permutations globally.
     </div>
 
     <div class="callout">
-      <strong>Q: Why does Dijkstra require all edge weights to be non-negative?</strong><br>
-      <em>A:</em> Dijkstra finalizes the shortest distance of a vertex the moment it is dequeued from the priority queue. A negative edge can retroactively provide a shorter path, violating the greedy invariant.
+      <strong>Q: Why does Dijkstra require non-negative edge weights?</strong><br>
+      <em>A:</em> Dijkstra finalizes a vertex's shortest distance upon extraction from the min-heap. A negative edge could retroactively create a shorter path, breaking the greedy invariant (Bellman-Ford handles negative weights).
     </div>
 
-    <br>
-    <div style="text-align:center; color:var(--text-light); font-size:0.85rem; margin-top:2rem;">
-      &bull; End of Capstone Report &bull; K.R. Mangalam University &bull; Academic Year 2026 &bull;
+    <h2>7. Conclusion</h2>
+    <p>
+      The Mini-Courier Dispatch Planner successfully integrates Merge Sort, 0/1 Knapsack DP, Dijkstra's Algorithm, and Nearest Neighbor TSP into a cohesive, real-time decision support tool. Empirical benchmarks closely match theoretical complexities, confirming sub-10 ms execution on practical urban courier workloads.
+    </p>
+
+    <div style="text-align:center; color:var(--text-light); font-size:0.85rem; margin-top:2rem; border-top:1px solid var(--border); padding-top:1rem;">
+      K.R. Mangalam University &bull; Laksh Vashist (2501730202) &bull; Mentor: Ms. Ankita Singh &bull; ETCCDA302
     </div>
   </div>
 
