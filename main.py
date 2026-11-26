@@ -226,11 +226,7 @@ def main():
     else:
         print(f"    (Exact comparison skipped because stops > {BRUTE_FORCE_LIMIT})")
 
-    print("\n" + cyan("━" * 72))
-    print(dim("  💡 Want an interactive web GUI with map animation & dynamic sliders?"))
-    print(dim("     Run: ") + bold("python server.py") + dim(" and open ") + bold("http://127.0.0.1:5000/"))
-    print(dim("     Or simply double-click ") + bold("web/index.html") + dim(" in your browser!"))
-    print(cyan("━" * 72) + "\n")
+    print("\n" + cyan("━" * 72) + "\n")
 
 if __name__ == "__main__":
     main()

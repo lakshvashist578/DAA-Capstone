@@ -56,7 +56,7 @@ This project, **"Mini-Courier Dispatch Planner & Route Optimization Engine"**, d
 2. **Optimal Payload Selection**: Solves the 0/1 Knapsack problem via **Dynamic Programming** ($O(n \cdot W)$) to maximize total delivery charges (revenue) without exceeding the vehicle's $25\text{ kg}$ weight limit.
 3. **Shortest Metric Pathfinding**: Employs **Dijkstra’s Algorithm** with min-heap priority queues ($O((V + E) \log V)$) on an adjacency-list representation of the NCR (Gurugram) road network to build an exact metric distance matrix between all active delivery nodes.
 4. **Tour Optimization**: Solves the metric Traveling Salesperson Problem (TSP) using a greedy **Nearest Neighbor Heuristic** ($O(n^2)$), benchmarked against an exact brute-force permutation search ($O(n!)$) to analyze approximation bounds.
-5. **Interactive Full-Stack Architecture**: Accompanied by both a modernized Unicode/ANSI terminal interface (`main.py`) and an interactive Web Dashboard (`web/index.html` & `server.py`) with real-time road canvas rendering, animated delivery van simulation, dynamic payload sliders, and interactive DP matrices.
+5. **Terminal Architecture**: Accompanied by a modernized Unicode/ANSI terminal interface (`main.py`) with clean tables, payload progress meters, and color-coded priority badges.
 
 Theoretical asymptotic boundaries are verified via comprehensive empirical performance benchmarks across small, medium, and large input scales.
 
@@ -73,7 +73,7 @@ Theoretical asymptotic boundaries are verified via comprehensive empirical perfo
    - 5.2 Optimal Payload Selection via 0/1 Knapsack Dynamic Programming
    - 5.3 Metric Shortest Paths via Dijkstra's Algorithm
    - 5.4 Tour Construction via Nearest Neighbor TSP vs. Brute-Force
-6. [Frontend & Interactive Dashboard Design](#6-frontend--interactive-dashboard-design)
+6. [User Interface and Terminal Architecture](#6-user-interface-and-terminal-architecture)
 7. [Comprehensive Asymptotic Complexity Analysis](#7-comprehensive-asymptotic-complexity-analysis)
 8. [Sample Execution Walkthrough and Verification](#8-sample-execution-walkthrough-and-verification)
 9. [Empirical Benchmarks and Runtime Analysis](#9-empirical-benchmarks-and-runtime-analysis)
@@ -107,9 +107,8 @@ The primary objectives established for this DAA Capstone project are:
   - Implement 0/1 Knapsack Dynamic Programming with table memoization and backtracking.
   - Implement Dijkstra's algorithm with min-heap priority queues for all-pairs distance extraction.
   - Implement Nearest Neighbor heuristic approximation for TSP and evaluate its approximation ratio against exact brute-force search.
-- **Deliver Modern User Interfaces**:
-  - Develop a terminal CLI featuring Unicode box-drawing tables, payload progress meters, and color-coded status badges.
-  - Develop a zero-dependency interactive Web Dashboard with HTML5 Canvas road network rendering, animated courier pathing, and real-time Knapsack slider controls.
+- **Deliver Modern Terminal Interface**:
+  - Develop a terminal CLI featuring Unicode box-drawing tables, payload progress meters, and color-coded status badges for clear evaluation and demo.
 - **Empirical Complexity Benchmarking**: Evaluate wall-clock runtime across small, medium, and large synthetic datasets to corroborate theoretical asymptotic growth orders $\mathcal{O}(n \log n)$, $\mathcal{O}(n \cdot W)$, $\mathcal{O}((V + E) \log V)$, and $\mathcal{O}(n^2)$.
 
 ---

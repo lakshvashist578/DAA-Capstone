@@ -5,24 +5,16 @@ it prioritises parcels, chooses what fits in the vehicle, finds shortest roads a
 
 ## How to run
 ```bash
-# 1. Terminal Mode (Refreshed, colorized CLI with Unicode tables & status bars)
 python main.py                          # run the planner on the sample data
 python main.py --capacity 15            # change vehicle capacity (kg)
-
-# 2. Interactive Web Dashboard (Visual road network map + live animation + sliders)
-python server.py                        # starts server at http://127.0.0.1:5000/
-# Or simply double-click web/index.html to view directly in any browser!
-
-# 3. Benchmarks & Charts
+python main.py --parcels my_parcels.json --locations my_map.json    # custom data
 python performance/benchmark.py         # performance tests + charts
 ```
-Python 3.8 or newer. Both `main.py` and `server.py` use only Python's standard library.
+Python 3.8 or newer. `main.py` uses only Python's standard library.
 
 ## Project structure
 ```
 main.py                  integrated terminal application (refreshed Unicode UI)
-server.py                web server & REST API for the interactive dashboard
-web/index.html           modern interactive web frontend (canvas map, live route animation)
 algorithms/sorting.py    Merge Sort (+ Bubble Sort for comparison)
 algorithms/knapsack.py   0/1 Knapsack with Dynamic Programming
 algorithms/dijkstra.py   graph building + Dijkstra + path rebuilding
